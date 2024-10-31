@@ -2,15 +2,339 @@
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Podcast — Richmond Chris-Koka</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: system-ui, -apple-system, sans-serif;
+            }
+    
+            body {
+                background-color:#1a1a1a;
+                color: #333;
+                line-height: 1.6;
+            }
+    
+            .hero {
+                padding: 4rem 2rem;
+                background: #1a1a1a;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 2rem;
+            }
+    
+            @media (max-width: 768px) {
+                .hero {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                    padding: 2rem 1rem;
+                }
+            }
+    
+            .profile-image {
+                width: 100%;
+                max-width: 400px;
+                border-radius: 8px;
+                aspect-ratio: 1;
+                object-fit: cover;
+            }
+    
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+    
+            .podcast-title {
+                font-size: 3rem;
+                font-weight: 800;
+                color: #fff;
+            }
+    
+            .host {
+                font-size: 1.2rem;
+                color: #666;
+            }
+    
+            .description {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: #fff;
+                margin-bottom: 1rem;
+            }
+    
+            .social-links {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+    
+            @media (max-width: 768px) {
+                .social-links {
+                    justify-content: center;
+                }
+            }
+    
+            .social-icon {
+                width: 24px;
+                height: 24px;
+                color: #000;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+    
+            .episode-grid {
+                display: block;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+                position: relative;
+            }
+    
+            .episode-card {
+                background: rgba(255, 255, 255, 0.105);
+                border-radius: 10px;
+                padding: 1.5rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                transition: transform 0.2s;
+            }
+    
+            .episode-card:hover {
+                transform: translateY(-5px);
+            }
+    
+            .episode-number {
+                color: #666;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+    
+            .episode-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                color: #fff;
+            }
+    
+            .episode-description {
+                color: #666;
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+    
+            .play-buttons {
+                display: flex;
+                gap: 0.5rem;
+            }
+    
+            .spotify-button {
+                background-color: #1DB954;
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: background-color 0.2s;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                font-size: 0.9rem;
+            }
+    
+            .apple-button {
+                background-color: #9933FF;
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: background-color 0.2s;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                font-size: 0.9rem;
+            }
+    
+            .spotify-button:hover {
+                background-color: #1ed760;
+            }
+    
+            .apple-button:hover {
+                background-color: #ab5aff;
+            }
+    
+            .toggle-button {
+                display: block;
+                margin: 2rem auto;
+                background-color: #2c2c2c;
+                color: white;
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: background-color 0.2s;
+            }
+    
+            .toggle-button:hover {
+                background-color: #404040;
+            }
+    
+            .platform-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+            }
+            .Navbar {
+                border: none;
+                margin-bottom: 0.5em;
+                color: #808080;
+                margin: auto;
+                padding: 2rem;
+                max-width: 36rem;
+  
+             }
+
+             a:hover {
+                color: #fffe9a;
+             }
+            
+        </style>
     </head> 
 
     <body>
         <a class="Navbar" href="index.html">« Home</a>
-        <h1>Podcast</h1>
+        <section class="hero">
+            <img src="host.jpg" alt="Podcast Host" class="profile-image">
+            
+            <div class="content">
+                <h1 class="podcast-title">TheChrisKoka</h1>
+                <p class="host">By Richmond Chris-Koka</p>
+                
+                <p class="description">
+                    We live in an era described by Peter Drucker as the era of the three Cs - accelerated CHANGE, overwhelming COMPLEXITY & tremendous COMPETITION. Navigating such an era can be super hard if you don't have great people to guide you! I am here to use my God-given ability & talent to help de-mystify the era of the 3Cs!
+                </p>
+    
+                <div class="social-links">
+                    <a href="https://instagram.com/thechriskoka" aria-label="Instagram">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/thechriskoka" aria-label="Twitter">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linktr.ee/thechriskoka" aria-label="Website">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.188-2.538-.222zm1.957 2.162c-.499 1.33-1.159 2.497-1.957 3.456v-3.62c.666.028 1.319.081 1.957.164zm-1.957-7.219v-3.015c.868-.034 1.721-.103 2.548-.224.238 1.027.389 2.111.446 3.239h-2.994zm0-5.014v-3.661c.806.969 1.471 2.15 1.971 3.496-.642.084-1.3.137-1.971.165zm2.703-3.267c1.237.496 2.354 1.228 3.29 2.146-.642.234-1.311.442-2.019.607-.344-.992-.775-1.91-1.271-2.753zm-7.241 13.56c-.244-1.039-.398-2.136-.456-3.279h2.994v3.057c-.865.034-1.714.102-2.538.222zm2.538 1.776v3.62c-.798-.959-1.458-2.126-1.957-3.456.638-.083 1.291-.136 1.957-.164zm-2.994-7.055c.057-1.128.207-2.212.446-3.239.827.121 1.68.19 2.548.224v3.015h-2.994zm1.024-5.179c.5-1.346 1.165-2.527 1.97-3.496v3.661c-.671-.028-1.329-.081-1.97-.165zm-2.005-.35c-.708-.165-1.377-.373-2.018-.607.937-.918 2.053-1.65 3.29-2.146-.496.844-.927 1.762-1.272 2.753zm-.549 1.918c-.264 1.151-.434 2.36-.492 3.611h-3.933c.165-1.658.739-3.197 1.617-4.518.88.361 1.816.67 2.808.907zm.009 9.262c-.988.236-1.92.542-2.797.9-.89-1.328-1.471-2.879-1.637-4.551h3.934c.058 1.265.231 2.488.5 3.651zm.553 1.917c.342.976.768 1.881 1.257 2.712-1.223-.49-2.326-1.211-3.256-2.115.636-.229 1.299-.435 1.999-.597zm9.924 0c.7.163 1.362.367 1.999.597-.931.903-2.034 1.625-3.257 2.116.489-.832.915-1.737 1.258-2.713zm.553-1.917c.27-1.163.442-2.386.501-3.651h3.934c-.167 1.672-.748 3.223-1.638 4.551-.877-.358-1.81-.664-2.797-.9zm.501-5.651c-.058-1.251-.229-2.46-.492-3.611.992-.237 1.929-.546 2.809-.907.877 1.321 1.451 2.86 1.616 4.518h-3.933z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+            <div id="episode-container" class="episode-grid">
+                <!-- Episodes will be  inserted here -->
+            </div>
+            <button id="toggleButton" class="toggle-button">Show More Episodes</button>
+        </main>
+    
+        <script>
+            const episodes = Array.from({ length: 92 }, (_, i) => ({
+                number: 92 - i,
+                title: `Episode ${92 - i}: ${generateTitle()}`,
+                description: "Join us for another exciting discussion where we explore fascinating topics and share unique insights with our amazing guests.",
+                // will be updated with actual URLs
+                spotifyUrl: `https://open.spotify.com/episode/your-episode-id-${92 - i}`,
+                appleUrl: `https://podcasts.apple.com/podcast/your-episode-id-${92 - i}`
+            }));
+    
+            const episodeContainer = document.getElementById('episode-container');
+            const toggleButton = document.getElementById('toggleButton');
+            let showingAll = false;
+            const initialDisplay = 12;
+    
+            function generateTitle() {
+                const topics = [
+                    "Lost Is Also A Place: Opportunities In The Dark",
+                    "From The Lens Of A First Time Father 👶",
+                    "Following Our Passion & Making A Difference",
+                    "Learn To Show Up For Yourself",
+                    "Contentment Vs Complacency: Finding The Balance",
+                    "Mid-Year Adulting Check-In",
+                    "Men's Mental Health: The Role Our Upbringing Plays In Our Mental Health",
+                    "Men's Mental Health: Who Was I? Who Am I? Who Do I Want To Be?"
+                ];
+                return topics[Math.floor(Math.random() * topics.length)];
+            }
+    
+            function createEpisodeCard(episode) {
+                const card = document.createElement('div');
+                card.className = 'episode-card';
+                card.innerHTML = `
+                    <div class="episode-number">Episode ${episode.number}</div>
+                    <h2 class="episode-title">${episode.title}</h2>
+                    <p class="episode-description">${episode.description}</p>
+                    <div class="play-buttons">
+                        <a href="${episode.spotifyUrl}" target="_blank" class="spotify-button">
+                            <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                            </svg>
+                            Listen on Spotify
+                        </a>
+                        <a href="${episode.appleUrl}" target="_blank" class="apple-button">
+                            <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.5 17.392c-.584 1.875-2.527 5.484-4.774 5.484-1.536 0-1.937-1.021-4.033-1.021-2.098 0-2.584 1.021-4.12 1.021-2.247 0-4.033-3.609-4.617-5.484-1.17-3.75-.292-10.875 2.339-10.875 1.536 0 2.583 1.021 4.033 1.021 1.449 0 2.339-1.021 4.033-1.021 2.631 0 3.801 7.125 2.631 10.875zM15.84.517c-1.17 1.021-2.923 1.875-4.033 1.875-.292-1.875.584-3.75 1.754-4.771C14.73-3.4 16.483-4.254 17.593-4.254c.292 1.875-.584 3.75-1.754 4.771z"/>
+                            </svg>
+                            Apple Podcasts
+                        </a>
+                    </div>
+                `;
+                return card;
+            }
+    
+            function displayEpisodes(count) {
+                episodeContainer.innerHTML = '';
+                const displayedEpisodes = episodes.slice(0, count);
+                displayedEpisodes.forEach(episode => {
+                    episodeContainer.appendChild(createEpisodeCard(episode));
+                });
+            }
+    
+            toggleButton.addEventListener('click', () => {
+                showingAll = !showingAll;
+                if (showingAll) {
+                    displayEpisodes(episodes.length);
+                    toggleButton.textContent = 'Show Less Episodes';
+                } else {
+                    displayEpisodes(initialDisplay);
+                    toggleButton.textContent = 'Show More Episodes';
+                }
+            });
+    
+            // Initial display
+            displayEpisodes(initialDisplay);
+        </script>
+
+        
     </body>
 </html>
+
+
+
 
 
 
