@@ -45,8 +45,91 @@ body {
     margin-bottom: 0.5em;
     color: #808080;
   }
+
+  .mutedTime {
+    margin-bottom: 2em;
+    color: #808080;
+  }
   
   .mugshot img  {
     width:2em;
     margin-bottom: -1em;
   }
+
+  .blogPost p {
+    font-family: 'IBM Plex Sans', Avenir, sans-serif;
+  }
+  
+
+  #blogList {
+    display: inline-grid;
+  }
+  
+  #blogList a {
+    margin: 0.5em 0;
+    border: none;
+  }
+
+  figcaption{
+    text-align: center;
+    font-size: 75%;
+  }
+
+  li {
+    line-height: 1.8em;
+  }
+
+  blockquote {
+    border-left: 3px solid #5c7a8a;
+    padding:0 2em;
+    margin: 3em 2em;
+  }
+
+  .oz {
+    font-style: inherit
+}
+
+.em{
+  font-style: italic;
+}
+
+.li {
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif
+}
+
+.fr {
+  font-weight: 700
+}
+
+.fq {
+  font-style: normal
+}
+
+.l {
+  display: block;
+}
+
+.oe {
+  float: left;
+}
+
+.of {
+  font-size: 66px;
+}
+
+og {
+  line-height: .83;
+}
+
+.bo {
+  margin-right: 12px;
+}
+
+.ol {
+  padding-top: 7px;
+}
+
+.ed {
+  position: relative;
+}
+
